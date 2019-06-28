@@ -1,0 +1,39 @@
+<div class="grid mt-2">
+
+  {{#each people as |person|}}
+
+    <div class="border-gray-400 border rounded bg-white p-4">
+      <div class="text-sm">
+        <p class="text-gray-900 leading-none text-xl">{{person.name}}</p>
+        <p class="text-gray-600">{{person.expenses.length}} expense(s) - {{format-money person.owed}}</p>
+      </div>
+    </div>
+
+  {{/each}}
+
+</div>
+
+{{#animated-each unassignedExpenses use=fade as |expense|}}
+
+  <div class="border-gray-400 border rounded bg-white p-4 mt-2">
+    <div class="px-6 pt-2 pb-1">
+      <div class="text-xl mb-2">
+        <span class="font-bold">{{format-money expense.amount}}</span>
+        <span class="italic">{{expense.description}}</span>
+        <span class="float-right">{{moment-format expense.date "MMM Do"}}</span>
+      </div>
+    </div>
+
+    <div class="px-6 pt-1 pb-2">
+
+      {{#each people as |person|}}
+        <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-1 px-3 border border-gray-400 rounded shadow"
+          {{action "assign" person expense}}>
+          {{person.name}}
+        </button>
+      {{/each}}
+
+    </div>
+  </div>
+
+{{/animated-each}}
