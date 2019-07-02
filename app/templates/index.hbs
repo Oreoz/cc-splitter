@@ -17,10 +17,12 @@
     <i class="fas fa-database"></i> Data
   </label>
 
-  <textarea oninput={{action "parse" value="target.value"}} placeholder="Paste your credit card bill here."
+  <textarea 
+    oninput={{action "parse" value="target.value"}} 
+    placeholder="Paste your credit card bill here."
     class="mt-1 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
 
-  <p class="text-gray-600 text-xs italic">Detected {{expenses.length}} expense(s) totaling {{total}}$.</p>
+  <p data-test-detected-expenses class="text-gray-600 text-xs italic">Detected {{expenses.length}} expense(s) totaling {{total}}$.</p>
 </div>
 
 <button {{action "submit"}} class="{{if submittable "" "opacity-50 cursor-not-allowed"}} bg-white hover:bg-gray-100 text-gray-800 font-semibold py-1 px-3 border border-gray-400 rounded shadow">

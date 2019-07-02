@@ -2,7 +2,7 @@
 
   {{#each people as |person|}}
 
-    <div class="border-gray-400 border rounded bg-white p-4">
+    <div data-test-person class="border-gray-400 border rounded bg-white p-4">
       <div class="text-sm">
         <p class="text-gray-900 leading-none text-xl">{{person.name}}</p>
         <p class="text-gray-600">{{person.expenses.length}} expense(s) - {{format-money person.owed}}</p>
@@ -15,7 +15,7 @@
 
 {{#animated-each unassignedExpenses use=fade as |expense|}}
 
-  <div class="border-gray-400 border rounded bg-white p-4 mt-2">
+  <div data-test-expense class="border-gray-400 border rounded bg-white p-4 mt-2">
     <div class="px-6 pt-2 pb-1">
       <div class="text-xl mb-2">
         <span class="font-bold">{{format-money expense.amount}}</span>
