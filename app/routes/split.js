@@ -14,6 +14,6 @@ export default Route.extend({
       expenses: this.store.peekAll('expense'),
       people: this.store.peekAll('person'),
     });
-  }
+  },
 
 });

@@ -5,7 +5,11 @@
     <div data-test-person class="border-gray-400 border rounded bg-white p-4">
       <div class="text-sm">
         <p class="text-gray-900 leading-none text-xl">{{person.name}}</p>
-        <p class="text-gray-600">{{person.expenses.length}} expense(s) - {{format-money person.owed}}</p>
+        <p class="text-gray-600">
+          <span data-test-expenses-for={{person.name}}>{{person.expenses.length}} expense(s)</span>
+          -
+          <span data-test-total-for={{person.name}}>{{format-money person.owed}}</span>
+        </p>
       </div>
     </div>
 
@@ -27,7 +31,7 @@
     <div class="px-6 pt-1 pb-2">
 
       {{#each people as |person|}}
-        <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-1 px-3 border border-gray-400 rounded shadow"
+        <button data-test-button-target={{person.name}} class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-1 px-3 border border-gray-400 rounded shadow"
           {{action "assign" person expense}}>
           {{person.name}}
         </button>
