@@ -7,6 +7,6 @@ This is a simple application that helps my girlfriend and I split our MasterCard
 
 ## 🤝 Contributing
 
-So you want to help me make this better? Thank you!
+So you want to help me make this better? Thank you! I'm currently working on a React re-write.
 
 Simply read the <a href="CONTRIBUTING.md">CONTRIBUTING.md</a> file and you should be ready to go.
